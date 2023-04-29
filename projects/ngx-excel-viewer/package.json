@@ -1,0 +1,28 @@
+{
+  "name": "ngx-excel-viewer",
+  "version": "0.0.1",
+  "description": "Ngx-excel-viewer is an angular library to view/edit excel data in the angular application where data is in the form of matrix of string.",
+  "author": {
+    "name": "mecharan14",
+    "email": "methatha14@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "excel viewer",
+    "csv viewer",
+    "excel edit"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mecharan14/ngx-excel-viewer"
+  },
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

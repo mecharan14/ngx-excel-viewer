@@ -1,0 +1,50 @@
+<div class="excel-file">
+    <div class="scrollable" (scroll)="onScroll($event)">
+        <table *ngIf="sheetData.length != 0">
+            <thead>
+                <tr>
+                    <th class="header s-no"></th>
+                    <th class="header" *ngFor="let header of headers">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="currentSheetName && data">
+                    <tr *ngFor="let data of sheetData; let i=index">
+                        <td class="s-no">{{i+1}}</td>
+                        <td *ngFor="let cell of data; let j=index"
+                            [ngClass]="{'main-selected': selectedCellIndices[0] == i && selectedCellIndices[1] == j}"
+                            (click)="selectCell(i,j)">
+                            <div [id]="'input-'+i+'-'+j" (blur)="onDataChanges($event, i, j)" (focus)="selectCell(i,j)"
+                                [contentEditable]="editable">{{cell["value"]}}</div>
+                        </td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+    <div class="empty-data" *ngIf="sheetData.length == 0">
+        Empty Sheet
+    </div>
+    <div class="footer">
+        Sheets: <div *ngFor="let sheet of sheetNames" class="sheet" [ngClass]="{'active': currentSheetName == sheet}"
+            (click)="setSelectedSheetName(sheet)">{{sheet}}</div>
+    </div>
+    <div class="loading" *ngIf="loading">
+        <div class="spinner">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</div>

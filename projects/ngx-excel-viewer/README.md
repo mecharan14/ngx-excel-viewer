@@ -21,7 +21,7 @@ Angular version >= 15.2.0
 
 ## Example
 
-[See example](./src/app/)
+[See example](../../src/app/)
 
 ## Properties
 

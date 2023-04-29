@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.excel-file {
+    border: 1px solid lightgrey;
+    width: 100%;
+    min-height: 20vh;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    font-family: sans-serif;
+    user-select: none;
+    overflow: hidden;
+
+    .loading {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+        z-index: 5;
+
+        .spinner{
+            position: absolute;
+            top: 50%;
+            left: 47%;
+            transform: translate(-50%, -50%) scale(0.7);
+        }
+    }
+
+    .scrollable {
+        width: 100%;
+        height: calc(100% - 50px);
+        overflow: auto;
+    }
+
+    td,
+    th {
+        padding: 0;
+        white-space: nowrap;
+    }
+
+
+    .s-no {
+        min-width: 25px;
+        background-color: #efefef;
+        position: sticky;
+        left: -1.5px;
+        text-align: center;
+        z-index: 1;
+    }
+
+    table {
+        table-layout: fixed;
+    }
+
+    .main-selected {
+        background-color: rgba($color: skyblue, $alpha: 0.2);
+        border: 2px solid skyblue;
+    }
+
+    td div {
+        outline: none;
+        border: none;
+        width: auto;
+        padding: 5px;
+        background-color: transparent;
+        min-height: 10px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1.5px solid #d9d9d9;
+        border-collapse: collapse;
+
+        .header {
+            background-color: #efefef;
+            position: sticky;
+            top: -1.5px;
+            z-index: 2;
+            padding: 2px;
+        }
+    }
+
+    .empty-data {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        min-height: 30px;
+        z-index: 5;
+        padding: 5px;
+        background-color: #efefef;
+        border-top: 1.5px solid lightgray;
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+
+        .sheet {
+            display: inline-block;
+            position: relative;
+            padding: 5px;
+            margin: 5px 2px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active,
+            &:hover {
+                margin: 5px;
+                background-color: white;
+                box-shadow: 0 0 5px 0 rgba($color: #000000, $alpha: 0.2);
+            }
+        }
+    }
+}
+
+// ::-webkit-scrollbar {
+//     width: 8px;
+//     height: 8px;
+// }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.lds-spinner {
+    color: official;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-spinner div {
+    transform-origin: 40px 40px;
+    animation: lds-spinner 1.2s linear infinite;
+}
+
+.lds-spinner div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 37px;
+    width: 6px;
+    height: 18px;
+    border-radius: 20%;
+    background: #fff;
+}
+
+.lds-spinner div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -1.1s;
+}
+
+.lds-spinner div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -1s;
+}
+
+.lds-spinner div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.9s;
+}
+
+.lds-spinner div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.8s;
+}
+
+.lds-spinner div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.7s;
+}
+
+.lds-spinner div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.6s;
+}
+
+.lds-spinner div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.5s;
+}
+
+.lds-spinner div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.4s;
+}
+
+.lds-spinner div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.3s;
+}
+
+.lds-spinner div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.2s;
+}
+
+.lds-spinner div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.1s;
+}
+
+.lds-spinner div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+}
+
+@keyframes lds-spinner {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
