@@ -37,16 +37,16 @@ let data = [
 
 ## Screenshots
 
-![View](projects/ngx-excel-viewer/src/assets/view.png)
+![View](src/assets/view.png)
 Excel Viewer
 
-![Actions](projects/ngx-excel-viewer/src/assets/edit_button.png)
+![Actions](src/assets/edit_button.png)
 Edit Button (Put button in parent component)
 
-![Editing](projects/ngx-excel-viewer/src/assets/editing.png)
+![Editing](src/assets/editing.png)
 Editing View
 
-![Sheets](projects/ngx-excel-viewer/src/assets/sheets.png)
+![Sheets](src/assets/sheets.png)
 Multiple Sheet Names View
 
 ## Properties
