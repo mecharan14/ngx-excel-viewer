@@ -1,8 +1,10 @@
 <button *ngIf="!isEditing" (click)="isEditing = true">Edit</button>
 <button *ngIf="isEditing" (click)="handleSave()">Save</button>
 <button *ngIf="isEditing" (click)="handleCancel()">Cancel</button>
+<br>
+<br>
 <div class="viewer">
   <ngx-excel-viewer *ngIf="isFetched" [data]="data" [editable]="isEditing" id="Source" saveDataOutput="edited-only"
-    (onDataSave)="onSave($event)" [sheetNames]="['Invoice Info']" [events]="eventEmitter"
+    (onDataSave)="onSave($event)" [sheetNames]="sheetNames" [events]="eventEmitter"
     (onScrollEnd)="onScroll($event)"></ngx-excel-viewer>
 </div>

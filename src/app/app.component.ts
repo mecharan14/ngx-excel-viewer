@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   stopFetching = false;
   eventEmitter = new BehaviorSubject<any>({});
   isEditing = false;
+  sheetNames: string[] = ['Invoice Info'];
   constructor(public httpClient: HttpClient) { }
 
   ngOnInit(): void {
@@ -23,12 +24,17 @@ export class AppComponent implements OnInit {
   getData(): void {
     this.httpClient.get('https://random-data-api.com/api/appliance/random_appliance?size=10')
     .subscribe((res: any) => {
-      let temp = [];
+      let temp: any[] = [];
+      let sheets: string[] = [];
       temp.push(Object.keys(res[0]));
       for(let r of res){
         temp.push(Object.values(r));
+        if(!sheets.includes(r['brand'])){
+          sheets.push(r['brand'])
+        }
       }
       this.data['Invoice Info'] = temp;
+      // this.sheetNames = sheets;
       this.isFetched = true;
     })
   }

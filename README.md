@@ -1,5 +1,8 @@
 # Ngx Excel Viewer
 
+![npm](https://img.shields.io/npm/v/ngx-excel-viewer.svg)
+![npm](https://img.shields.io/npm/dm/ngx-excel-viewer.svg)
+
 Ngx-excel-viewer is an angular library to view/edit excel data in the angular application where data is in the form of matrix of string.
 
 Angular version >= 15.2.0
@@ -19,9 +22,32 @@ Angular version >= 15.2.0
 </ngx-excel-viewer>
 ```
 
+```typescript
+let data = [
+  ["Year", "Car Name", "Car Type", "Horse power", "Engine"],
+  ["2017", "Telsa", 11, 12, 13],
+  ["2018", "Audi", 11, 14, 13],
+  ["2019", "BMW", 15, 12, 13]
+];
+```
+
 ## Example
 
 [See example](./src/app/)
+
+## Screenshots
+
+![View](projects/ngx-excel-viewer/src/assets/view.png)
+Excel Viewer
+
+![Actions](projects/ngx-excel-viewer/src/assets/edit_button.png)
+Edit Button (Put button in parent component)
+
+![Editing](projects/ngx-excel-viewer/src/assets/editing.png)
+Editing View
+
+![Sheets](projects/ngx-excel-viewer/src/assets/sheets.png)
+Multiple Sheet Names View
 
 ## Properties
 

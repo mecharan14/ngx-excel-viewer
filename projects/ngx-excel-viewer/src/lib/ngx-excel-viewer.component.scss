@@ -116,6 +116,7 @@
             border-radius: 3px;
             cursor: pointer;
             transition: all 0.3s ease;
+            white-space: nowrap;
 
             &.active,
             &:hover {
