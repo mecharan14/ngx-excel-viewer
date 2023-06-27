@@ -24,7 +24,7 @@ export class NgxExcelViewerComponent implements OnInit, OnChanges {
   public isSheetDataChanged = false;
   private backupSheetData: any[] = [];
   public modifiedRows: number[] = [];
-  private renderedPages = 0;
+  private renderedPages = 1;
   private lastScrollTop = 0;
   public loading = false;
   constructor() { }
@@ -164,7 +164,7 @@ export class NgxExcelViewerComponent implements OnInit, OnChanges {
   onScroll(event: any) {
     if (event.target.scrollTop > this.lastScrollTop) {
       if ((event.target.offsetHeight + event.target.scrollTop) >= event.target.scrollHeight) {
-        this.onScrollEnd.emit({ id: this.id, pageNo: this.renderedPages + 1, sheet: this.currentSheetName });
+        this.onScrollEnd.emit({ id: this.id, pageNo: this.renderedPages++, sheet: this.currentSheetName });
       }
     }
     this.lastScrollTop = event.target.scrollTop;
