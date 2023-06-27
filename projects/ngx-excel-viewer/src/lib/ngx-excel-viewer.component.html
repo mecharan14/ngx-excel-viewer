@@ -15,7 +15,7 @@
                             [ngClass]="{'main-selected': selectedCellIndices[0] == i && selectedCellIndices[1] == j}"
                             (click)="selectCell(i,j)">
                             <div [id]="'input-'+i+'-'+j" (blur)="onDataChanges($event, i, j)" (focus)="selectCell(i,j)"
-                                [contentEditable]="editable">{{cell["value"]}}</div>
+                                [contentEditable]="editable" [innerHTML]="cell['value']"></div>
                         </td>
                     </tr>
                 </ng-container>
